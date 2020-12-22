@@ -1,11 +1,3 @@
-/*
-	lazyLoadGoogleMaps v1.0.2
-	A JavaScript plugin for lazy-loading Google Maps.
-	-
-	By Osvaldas Valutis, www.osvaldas.info
-	Available for use under the MIT License
-*/
-
 window.googleMapsScriptLoaded = function() {
     $(window).trigger("googleMapsScriptLoaded")
 }
@@ -90,7 +82,7 @@ window.googleMapsScriptLoaded = function() {
     }));
     $.fn.lazyLoadGoogleMaps = function(options) {
         options = $.extend({
-            key: 'AIzaSyBM2liQJL091Fv8FtF8uWYwLk2imdiXFtc',
+            key: 'Here Lies the Api Key',
             libraries: false,
 			signed_in: false,
             language: false,
