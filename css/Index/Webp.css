@@ -1,0 +1,70 @@
+
+.cb-slideshow li:nth-child(1) picture { 
+    background-image: url(../../images/home_page/project1/small.webp) 
+}
+.cb-slideshow li:nth-child(2) picture { 
+    background-image: url(../../images/home_page/project2/small.webp);
+    animation-delay: 6s; 
+}
+.cb-slideshow li:nth-child(3) picture { 
+    background-image: url(../../images/home_page/project3/small.webp);
+    animation-delay: 12s; 
+}
+.cb-slideshow li:nth-child(4) picture { 
+    background-image: url(../../images/home_page/project4/small.webp);
+    animation-delay: 18s; 
+}
+.cb-slideshow li:nth-child(5) picture { 
+    background-image: url(../../images/home_page/project5/small.webp);
+    animation-delay: 24s; 
+}
+.cb-slideshow li:nth-child(6) picture { 
+    background-image: url(../../images/home_page/project6/small.webp);
+    animation-delay: 30s; 
+}
+
+/*Image Resize Optimization for Slideshow*/
+@media only screen and (min-device-width: 1270px){
+	.cb-slideshow li:nth-child(1) picture { 
+		background-image: url(../../images/home_page/project1/medium.webp) 
+	}
+	.cb-slideshow li:nth-child(2) picture { 
+		background-image: url(../../images/home_page/project2/medium.webp) 
+	}	
+	.cb-slideshow li:nth-child(3) picture { 
+		background-image: url(../../images/home_page/project3/medium.webp) 
+	}	
+	.cb-slideshow li:nth-child(4) picture { 
+		background-image: url(../../images/home_page/project4/medium.webp) 
+	}	
+	.cb-slideshow li:nth-child(5) picture { 
+		background-image: url(../../images/home_page/project5/medium.webp) 
+	}
+	.cb-slideshow li:nth-child(6) picture { 
+		background-image: url(../../images/home_page/project6/medium.webp) 
+	}
+}
+@media only screen and (min-device-width: 2048px){
+	.cb-slideshow li:nth-child(1) picture { 
+		background-image: url(../../images/home_page/project1/large.webp) 
+	}
+	.cb-slideshow li:nth-child(2) picture { 
+		background-image: url(../../images/home_page/project2/large.webp) 
+	}	
+	.cb-slideshow li:nth-child(3) picture { 
+		background-image: url(../../images/home_page/project3/large.webp) 
+	}	
+	.cb-slideshow li:nth-child(4) picture { 
+		background-image: url(../../images/home_page/project4/large.webp) 
+	}	
+	.cb-slideshow li:nth-child(5) picture { 
+		background-image: url(../../images/home_page/project5/large.webp) 
+	}
+	.cb-slideshow li:nth-child(6) picture { 
+		background-image: url(../../images/home_page/project6/large.webp) 
+	}
+}
+
+picture.lazy {
+	background-image: none;
+}

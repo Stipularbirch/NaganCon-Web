@@ -1,0 +1,219 @@
+body.employment {
+	background: url("../../images/employment1.jpg") no-repeat center center fixed;
+	background-size: cover; 
+	height: 100%;
+	position: relative;
+	overflow-x: hidden;
+}
+body.employment::before { 
+	content: "";
+	display: block;
+	position: fixed;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: -1;
+	background: rgba(0, 0, 0, 0.5);
+
+}
+
+section.application{
+	position: absolute;
+	left:0;
+	right:0;
+	width: 40%;
+	margin: auto;
+	z-index: 3;
+	background-color:rgba(84, 84, 85, 0.52);
+	padding-top: 2rem;
+    padding-bottom: 1.5rem;
+	box-sizing: border-box;
+}
+
+.container{
+	position: relative;
+	text-align: center;
+	color: #ffffff;
+	margin:0 auto;
+	padding-top: 6.75rem;
+	font-weight:300;
+	text-align: center;
+	position:relative;
+	height: 100%;
+}
+
+
+/*Employment Forms*/
+
+select#form_selection, select#job_selection,
+	input#name, input#email,input#address, input#captcha,
+		input#Insurance {
+			height:40px;
+			padding:0 15px;
+			width:92.2%;
+}
+	
+select#form_selection , select#job_selection {
+	text-align:center;
+}
+    
+label.header, label.header_inside{
+	font-size: 17px;
+	font-weight: 300;
+	text-align: center;
+	letter-spacing:0.125em;
+	float: left;
+	margin-bottom: 12px;
+	width:100%;
+}
+
+label.header_inside {
+	margin-top: 12px;
+}
+
+	label.header_inside > span {
+		font-size: 20px;
+		color: #64E6A8;
+	}
+	
+	label.header_inside#Email , #type{
+		width: 50%;
+	}
+	
+	label.header_inside#box_label {
+		margin-top: 0;
+		padding-top: 1em;
+		padding-bottom: 1em;
+		position: absolute;
+		background-color: #fff;
+	}
+		
+/*Employment Status */
+
+	/*Individual Form */
+	.float-left {
+		width: 50%;
+		float: left;
+	}
+		.float-left#upload_file{
+			margin-top: 0.5em;
+			margin-bottom: 1em;
+		}
+	
+	.float-right {
+
+		position:relative;
+		width: 50%;
+		float: right;
+	}
+	
+	#attachment1, #attachment2, #attachment3 {
+		display: none;
+	}
+	
+	#upload_file > label:nth-child(3) {
+		display: inline-block;
+		width: 50%;
+	}
+	
+	#upload_file > label:nth-child(3):hover {
+		transition: 0.5s;
+		color: #0000EE;
+	}
+		.advise {
+			position: relative;
+		}
+		#captcha1, #captcha2, #captcha3{
+			display: block;
+			width: 95%;
+		}
+		#check{
+			margin-top: 1em;
+			padding-left: 0.5em;
+			padding-right: 0.5em;
+		}
+		
+		#ok1, #ok2 , #ok3 {
+			margin-top: 1em;
+			display:none;
+			position: relative;
+			width: 100%;
+		
+		}
+		div#reminder {
+			padding-top: 1em;
+			/*display: inline-block;*/
+			font-style: italic;
+		}
+		div#current_info {
+			margin-top: 1em;
+			margin-left: 1em;
+			margin-right: 1em;
+			/*display: inline-block;*/
+			border: solid;
+		}
+			p#special_p {
+				color:red;
+			}
+	
+	/*Subcontractor Form*/
+		
+		span#Union , #Wage {
+			display: inline-block;
+			text-align: center;
+			padding: 1em 1em;
+		}
+		
+		input#radio{
+			width: auto;
+		}
+		.float-right #popup, .float-left #popup {
+			display:none;
+		}
+		.float-right:hover #popup, .float-left:hover #popup {
+			margin: 1em;
+			padding: 1em 0.5em;
+			display: inline-block;
+			position: relative ;
+			border: 1px solid #ffffff;
+		
+		}
+
+@media only screen and (min-width : 1367px) and (max-width : 1920px) {
+	section.application {
+		width : 55%;  
+	}
+	select#form_selection, select#job_selection, input#name, input#email, input#address, input#captcha, input#Insurance {
+		width : 85%;
+	}
+}
+@media only screen and (min-width : 1025px) and (max-width : 1366px) {
+	section.application {
+		width : 70%;  
+	}
+	select#form_selection, select#job_selection, input#name, input#email, input#address, input#captcha, input#Insurance {
+		width : 90%;
+	}
+}
+@media only screen and (max-width : 1024px) {
+	section.application {
+		margin: 0 2.5%;
+		width: 95%;
+		padding-right: 0;
+		padding-left: 0;
+	}
+	
+	select#form_selection, select#job_selection, input#name, input#email, input#address, input#captcha, input#Insurance {
+		width : 60%;
+	}
+	#job_selection {
+		margin: 1% 2.5%;
+	}
+}
+
+@media only screen and ( max-width : 980px ){
+	#banner {
+		padding-top: 1rem;
+	}
+}

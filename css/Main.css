@@ -1,0 +1,393 @@
+@charset "UTF-8";
+
+/* Font Format*/
+@font-face {
+	font-family: 'BAUHS93';
+	src: url('../images/Logo/BAUHS93.eot');
+	src: local('Logo'), 
+		url('../images/Logo/BAUHS93.woff') format('../images/Logo/woff'),
+		url('../images/Logo/BAUHS93.ttf') format('truetype');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Muli ExtraLight';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Muli ExtraLight'),
+		url('../images/Muli_Font/Muli-ExtraLight.woff') format('woff'),
+		url('../images/Muli_Font/Muli-ExtraLight.ttf') format('truetype');
+	font-display: swap;
+}
+
+/* CSS reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+	margin:0;
+	padding:0;
+	border:0;
+	font-size:100%;
+	font:inherit;
+	vertical-align:baseline;
+}
+
+strong, b{
+	font-weight:bold;
+}
+
+html,body {
+	min-height: 100vh;
+	font-family:'Muli ExtraLight';
+	font-weight: 300;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+}
+
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+
+fieldset,img { 
+	border:0;
+}
+
+ul,ol {
+	list-style:none;
+}
+
+ul {
+	margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+}
+
+#header {
+	position: fixed;
+	width: 100%;
+	z-index: 5;
+	transition: top 1s;
+}
+
+#containerB {
+	display: flex;
+	justify-content: center;
+	right: 1.75rem;
+	top: 1.75rem;
+	position: fixed;
+	border-radius: 25px;
+	background-color: rgba(0,0,0,0.5);
+	height: 44px;
+	width: 44px;
+	z-index: 1;
+}
+
+#containerB > label {
+	display: inherit;
+	cursor: pointer;
+	margin: auto;
+	z-index: 5;
+	color: #fff;
+}
+
+#containerB > label input {
+	display: none;
+}
+
+#containerB > label input + div {
+	width: 20px;
+	height: 14px;
+	position: relative;
+}
+
+#containerB > label input + div div {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;	
+	bottom: 0;
+	-webkit-transition: -webkit-transform .5s ease;
+	transition: -webkit-transform .5s ease;
+	transition: transform .5s ease;
+	transition: transform .5s ease, -webkit-transform .5s ease;
+}
+
+#containerB > label input + div div span {
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+#containerB > label input + div div span:first-child {
+	top: 0;
+}
+
+#containerB > label input + div div span:first-child:before, #containerB > label input + div div span:first-child:after {
+	top: 0;
+}
+
+#containerB > label input + div div span:last-child {
+	bottom: 0;
+}
+
+#containerB > label input + div div span:last-child:before, #containerB > label input + div div span:last-child:after {
+	bottom: 0;
+}
+
+#containerB > label input + div div span:before, #containerB > label input + div div span:after {
+	content: '';
+	display: block;
+	width: 47%;
+	height: 2px;
+	border-radius: 1px;
+	background: #fff;
+	position: absolute;
+	-webkit-backface-visibility: hidden;
+	-webkit-transition: border-radius .3s ease, background .4s ease, -webkit-transform .5s ease;
+	transition: border-radius .3s ease, background .4s ease, -webkit-transform .5s ease;
+	transition: transform .5s ease, border-radius .3s ease, background .4s ease;
+	transition: transform .5s ease, border-radius .3s ease, background .4s ease, -webkit-transform .5s ease;
+}
+
+#containerB > label input + div div span:before {
+	left: 0;
+	-webkit-transform-origin: 0 50%;
+			transform-origin: 0 50%;
+	-webkit-transform: translate(1px, 0) scaleX(1.1);
+			transform: translate(1px, 0) scaleX(1.1);
+}
+
+#containerB > label input + div div span:after {
+	right: 0;
+	-webkit-transform-origin: 100% 50%;
+			transform-origin: 100% 50%;
+	-webkit-transform: translate(-1px, 0) scaleX(1.1);
+			transform: translate(-1px, 0) scaleX(1.1);
+}
+
+#containerB > label input + div svg {
+	display: block;
+	fill: none;
+	stroke: #fff;
+	stroke-width: 2px;
+	width: 44px;
+	height: 44px;
+	stroke-linecap: round;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -22px 0 0 -22px;
+	stroke-dasharray: 0 82.801 8 82.801;
+	stroke-dashoffset: 82.801;
+	-webkit-transform-origin: 50% 50%;
+		transform-origin: 50% 50%;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1);
+		transform: scale(1);
+	-webkit-transition: stroke-dashoffset .5s ease, stroke-dasharray .6s ease, stroke .4s ease, -webkit-transform .5s ease;
+	transition: stroke-dashoffset .5s ease, stroke-dasharray .6s ease, stroke .4s ease, -webkit-transform .5s ease;
+	transition: stroke-dashoffset .5s ease, stroke-dasharray .6s ease, transform .5s ease, stroke .4s ease;
+	transition: stroke-dashoffset .5s ease, stroke-dasharray .6s ease, transform .5s ease, stroke .4s ease, -webkit-transform .5s ease;
+}
+
+#containerB > label input + div svg:nth-child(3) {
+	-webkit-transform: rotate(180deg) scale(1);
+		transform: rotate(180deg) scale(1);
+}
+
+#containerB > label input:checked + div div {
+	-webkit-transform: rotate(90deg);
+		transform: rotate(90deg);
+}
+#containerB > label input:checked + div div span:before, #containerB > label input:checked + div div span:after {
+	background: #fff;
+}
+
+#containerB > label input:checked + div div span:first-child:before {
+	-webkit-transform: rotate(45deg) translate(2.2px, -3px) scaleX(1.05);
+			transform: rotate(45deg) translate(2.2px, -3px) scaleX(1.05);
+}
+#containerB > label input:checked + div div span:first-child:after {
+	-webkit-transform: rotate(-45deg) translate(-2.2px, -3px) scaleX(1.05);
+			transform: rotate(-45deg) translate(-2.2px, -3px) scaleX(1.05);
+}
+#containerB > label input:checked + div div span:last-child:before {
+	-webkit-transform: rotate(-45deg) translate(2.2px, 3px) scaleX(1.05);
+			transform: rotate(-45deg) translate(2.2px, 3px) scaleX(1.05);
+}
+#containerB > label input:checked + div div span:last-child:after {
+	-webkit-transform: rotate(45deg) translate(-2.2px, 3px) scaleX(1.05);
+			transform: rotate(45deg) translate(-2.2px, 3px) scaleX(1.05);
+}
+#containerB > label input:checked + div svg {
+	stroke-dashoffset: 62;
+	stroke-dasharray: 0 82.801 62 82.801;
+	-webkit-transform: rotate(90deg);
+			transform: rotate(90deg);
+	stroke: #fff;
+}
+#containerB > label input:checked + div svg:nth-child(3) {
+	-webkit-transform: rotate(270deg);
+			transform: rotate(270deg);
+}
+#containerB > label input:checked + #nav {
+	top: 0;
+}
+/*Keyframes for Nav Bar Pull down*/
+@keyframes slide_down {
+	0% { transform: translateY(-100%); }
+
+	100% { transform: translateY(0%); }
+}
+
+
+/*Navigstion Bar and Links */
+@media only screen and (min-width : 981px) {
+#header {
+	display: block;
+	cursor: default;
+	height: 5.75rem;
+	line-height: 5.75rem;
+	color: #ffffff;
+	background-color: rgba(32,34,34,0.5);
+}
+	#containerB {
+		display: none;
+	}
+	
+	#header > svg {
+		 position: absolute;
+		 top: 50%;
+		 left: 2%;
+		 height: 5.50rem;
+		 width: 150px;
+		 transform: perspective(1px) translate(-2%,-50%);
+	}
+		.logo {
+			height: 50%;
+		}
+
+	#header > label, #header > label::before {
+		display: none;
+	}
+	
+		#header nav {
+			height: inherit;
+			line-height: inherit;
+			position: fixed;
+			right: 2.75rem;
+			vertical-align: middle;
+			z-index: 10;
+			font-size: 1.1rem;
+			transition: top 1s;
+		}
+			#header nav > ul {
+				list-style: none;
+				margin: 0;
+				padding-left: 0;
+			}
+				#header nav > ul > li {
+					border-radius: 4px;
+					display: inline-block;
+					margin-left: 1.5em;
+					padding-left: 0;
+				}
+
+					#header nav > ul > li a {
+						transition: color 0.2s ease-in-out;
+						color: #cee8d8;
+						display: inline-block;
+						text-decoration: none;
+					}
+
+						#header nav > ul > li a:hover {
+							color: #ffffff;
+						}
+
+					#header nav > ul > li:first-child {
+						margin-left: 0;
+					}
+
+					#header nav > ul > li .button {
+						height: 2.25em;
+						line-height: 2.25em;
+						margin-bottom: 0;
+						padding: 0 1em;
+						position: relative;
+						top: -0.075em;
+						vertical-align: middle;
+					}
+}
+
+@media only screen and (max-width : 980px) {
+#header {
+	height: 0rem;
+}
+	#header > svg {
+		display: none;
+	}
+	
+	#header > label{
+		cursor: pointer;
+		top: 0.75rem;
+		right: 0.75rem;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		z-index: 5;
+		border-top: 2px solid #000;
+		border-bottom: 2px solid #000;
+	}
+
+	#header > label::before {
+		content: '';
+		position: relative;
+		top: 0.4375rem;
+		border-top: 2px solid #000;
+	}
+	
+	#header > label, #header > label::before {
+		display: block;
+	}
+
+	nav {
+		position: relative;
+		top: -300vh;
+		text-align: center;
+		font-size: 1rem;
+		box-sizing: border-box;
+		padding:0;
+		transition: top 800ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+		background-color: rgba(32,34,34,0.65);	
+	}
+		.clicked {
+			top: 0;
+		}
+		
+		nav > ul {
+			padding: 2.5% 10% 2.5% 10%;
+			
+		}
+			#nav > ul > li:nth-child(n+2){
+				margin-top: 2.5%;
+			}
+				#nav > ul > li > a {
+					display: block;
+					transition: color 0.2s ease-in-out;
+					color: #cee8d8;
+					width:100%;
+					text-decoration: none;
+				}
+				
+
+				#nav > ul > li > a:hover {
+					color: #ffffff;
+				}
+
+}

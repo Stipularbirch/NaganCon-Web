@@ -1,0 +1,425 @@
+html,body{
+	position: relative;
+}
+
+body.slideshow{
+	background-image: url("../../images/gradient_background1.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover; 
+}
+
+h1 {
+	font-weight: 200;
+	font-size: 1.7rem;
+	padding: 0.9rem 0;
+	text-align: center;
+}
+hr {
+	margin: 0;
+
+}
+.specialHeader{
+	animation: slide_down 2s ease;
+	visibility: visible !important;
+}
+
+.preface {
+	position:absolute;
+	background-color:#fff;
+	z-index:20;
+	width:100%;
+	display: table;
+	height: 100vh;
+}
+
+/* Welcome Screen */
+#userGuidance{
+	display: none;
+}
+	.preface .userGuidance {
+		display: table-cell !important;
+		vertical-align: middle;
+		animation: fadeinout 4.5s linear forwards;
+		opacity: 0;
+	}
+		
+	.preface p {
+		text-align: center;
+		font-size: 3em;
+		font-weight: 300;
+		color: #303030;
+	}
+	.preface p:nth-child(2){
+		text-align: center;
+		font-size: 5em;	
+		font-weight: 300;
+	
+	}
+	
+/* Content Layout */
+
+.slideshow-container {
+	width:100%;
+	height: 100vh;
+	box-sizing: border-box;
+	display:flex;
+}
+	.content-container {
+		position:relative;
+		height:100%;
+		width:100%;
+	}
+	.content-item{
+		height:inherit;
+		width:inherit;
+	}
+		.left, .right {
+			z-index:5;
+			float: left;
+			width: 50%;
+			height: inherit;
+		}
+		.left {
+			background: url("../../images/gradient_background2.jpg");	
+		}
+
+		.right {
+			background-color: #3ba666;	
+			box-shadow: inset 1rem 1rem 1.25rem -1.0625rem rgba(0,0,0,0.75);
+			padding: 1.5%;
+			box-sizing: border-box;
+		}
+		.active-left{
+			/*-webkit-animation: slide_up 2s ease forward;*/
+			animation: slide_up 2s ease;
+		}
+		.active-right {
+			/*-webkit-animation: slide_left 2s ease forward;*/
+			animation: slide_left 2s ease;
+		}
+		.transition-up {
+			/*-webkit-animation: slide_up 1s ease forward;*/
+			animation: slide_up 1s ease;
+		}
+		.transition-down {
+			/*-webkit-animation: slide_down 1s ease forward;*/
+			animation: slide_down 1s ease;
+		}
+		.transition-right {
+			/*-webkit-animation: slide_right_plus 1s ease forward;*/
+			animation: slide_right_plus 1s ease;
+		}
+		.transition-left {
+			/*-webkit-animation: slide_left 1s ease forward;*/
+			animation: slide_left 1s ease;	
+		}
+		/*Content Info*/
+		
+		.content-info {
+			background-color: #fff;
+			height:100%;
+			display: flex;
+			flex-direction: column;
+		}
+			.project-box {
+				overflow:auto;
+				margin: 0 0.5rem 0.5rem 0.5rem;
+				flex-grow: 1;
+				box-shadow: 0 -3px 6px rgba(0,0,0,0.16), 0 -3px 6px rgba(0,0,0,0.23);
+			}
+			.project-box:nth-of-type(1){
+				margin-top: 0.5rem;
+			}
+				.title {
+					background-color:#bbb;
+					height: 2.5rem;
+					text-align: center;
+					padding: 0.7rem 0;
+					color: white;
+				}
+				.description {
+					padding: 0.7rem 0.5rem;
+				}
+				.inline-stack{
+					display: inline-block;
+					float: left;
+					padding: 0.7rem 0.5rem;
+				}
+			.project-label {
+				height: 3.5rem;
+				width: 100%;
+				padding: 1rem 0;
+				background-color: #bbb;
+			}
+	
+			.project-label p {
+				text-align: center;
+				color: white;
+			}
+			.outline {
+				border: solid;
+				border-color: #eee;
+				margin: 0.5rem 0;
+				width: 50%;
+				padding: .75rem 0;
+				border-radius: 0.25rem;
+			}
+				.outline a {
+					width: inherit;
+				}
+				
+
+		/* Picture Layout */
+		.curr , .comp {
+			min-height:100%;
+			max-width:100%;
+			width:auto;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+		}
+		.comp{
+			overflow:hidden;
+			display:flex;
+			position:relative;	
+			height:inherit;
+			border-top: 0.1rem solid #000;
+		}	
+			.comp > img {
+				top:50%;
+				left:50%;
+				transform: translate(-50%,-50%);
+				position:absolute;
+				min-height:100%;
+				min-width:100%;
+			}
+	
+	/*Current Projects Pictures*/
+	#curr1 {
+		background-image: url("../../images/current_projects/1.jpg");
+	}
+	#curr2 {
+		background-image: url("../../images/current_projects/2.jpg");
+	}
+	#curr3 {
+		background-image: url("../../images/current_projects/3.jpg");
+	}
+	#curr4 {
+		background-image: url("../../images/current_projects/4.jpg");
+	}
+	/*Completed Projects Pictures*/
+
+	/*#comp1 {
+		background-image: url("../images/select_projects/comp1.jpg");
+	}
+	#comp2{
+		background-image: url("../images/select_projects/comp2.jpg");
+	}*/
+	
+	#comp3 {
+		background-image: url("../../images/select_projects/comp3/comp3.jpg");
+	}
+	#comp4 {
+		background-image: url("../../images/select_projects/comp4/comp4.jpg");
+	}
+	#comp5 {
+		background-image: url("../../images/select_projects/comp5/comp5.jpg");
+	}
+	#comp6 {
+		background-image: url("../../images/select_projects/comp6/comp6.jpg");
+	}
+	#comp7 {
+		background-image: url("../../images/select_projects/comp7/comp7.jpg");
+	}
+	
+	
+/* Index Bar */
+
+#index-bar{
+	height:100%;
+	min-width: 3em; /* has a linked value in translation, dont forget to change as well */
+	position: relative;
+	flex-grow:1;
+	font-size: 10pt !important;
+	white-space: nowrap;
+	background-color: #3ba666;
+	z-index:3;
+}
+
+	.index-bar {
+		visibility: visible !important;
+		animation: slide_right 2s ease;
+		box-shadow: inset -1rem 1rem 1.25rem -1.0625rem rgba(0,0,0,0.75);
+	}
+
+	
+	.index-bar-container {
+		display:table;
+		height:100%;
+		margin: 0 auto;
+	}
+	
+	.index-slide {
+		display: table-cell;
+		vertical-align: middle;
+	}
+	
+	.index-slide span {
+		display:inherit;
+		color:#fff;
+		text-align: right;
+		transform: rotate(-90deg);
+	}
+
+.iconImage {
+	/*max-width:100%;*/
+	max-height:100%;
+}
+
+/* Footer Layout - Bottom Arrows */
+.footer {
+	pointer-events: none;
+	position: absolute;
+	bottom:0;
+    left: 50%;
+    transform: translate(-50%, -25%);
+    width: 15%;
+	z-index: 10;
+	display: flex;
+	flex-direction: row;
+}
+
+	.footer .footer-left, .footer .footer-right, .footer .footer-middle {
+		position:relative;
+	}	
+
+	.footer .footer-left, .footer .footer-right{
+		pointer-events: all;
+		width: 4.25rem;
+		height: 3.5rem;
+	}
+	
+	.footer .footer-middle {
+		flex-grow: 1;
+	}
+	
+
+	
+	.footer-right > button#prevButton, .footer-left > button#nextButton {
+		padding: 0.4rem 0;
+		border-color: rgb(166, 166, 166);
+		border-style: solid;
+		border-radius: 0.5rem;
+		border-width: 0.1rem;
+		background: rgba(32, 34, 34, 0.5);
+		transition: all 0.8s ease;
+		text-align: center;
+		height: inherit;
+		width: 100%;
+ 	}
+	
+	.footer-right > button#prevButton:hover, .footer-left > button#nextButton:hover{
+		background: rgba(32,34,34,0.85);
+		border-color: rgba(0,0,0,0);
+		border-radius: 0.35rem;	
+	}
+	
+	.iconImage {
+		/*max-width:100%;*/
+		max-height:100%;
+
+	}
+
+/* Keyframes Welcome Sign */
+
+@keyframes fadeinout {
+	50% { opacity: 1 ; }
+}
+	
+	
+/*Keyframes for Index bar slide-up*/
+
+@keyframes slide_up {
+	0% { transform: translateY(+100%);}
+		
+	100% { transform: translateY(0%); }
+}
+	
+/*Keyframes for Slides slide right and left*/
+
+@keyframes slide_right {
+	0% { transform: translateX(-3rem);
+		 box-shadow: none;
+	}
+		
+	100% { transform: translateX(0);
+		   box-shadow: inset -1rem 1rem 1.25rem -1.0625rem rgba(0,0,0,0.75);
+	}
+}
+
+@keyframes slide_right_plus {
+	0% { transform: translateX(-100%); }
+		
+	100% { transform: translateX(0%); }
+}
+
+@keyframes slide_left {
+	0% { transform: translateX(+100%);
+		box-shadow: none; 
+	}
+		
+	100% { transform: translateX(0%);
+			 box-shadow: inset 1rem 1rem 1.25rem -1.0625rem rgba(0,0,0,0.75);
+	}
+}
+
+/*Media Query Pad Slidshow container*/
+
+@media only screen and (min-width : 981px) {
+	.slideshow-container {
+		padding-top: 5.75rem;
+	}
+}
+
+
+@media only screen and ( max-width : 1800px) {
+	.index-bar {
+		font-size: 0.79rem;
+	}
+}
+
+@media only screen and ( max-width : 800px ){
+	.left, .right {
+		display: block;
+		float: none;
+		width: 100%;
+		height: 50%;
+	}
+	.right {
+		background-color: #4dac71;
+		border-width:0.1rem; 
+		border-color: #ddd;
+	}
+}
+		
+/*Media Query Footer container*/
+
+@media only screen and (max-width : 1175px) {
+	.footer {
+		width: 16.5%;
+	}
+}
+
+@media only screen and (max-width : 1050px) {
+	.footer {
+		width: 8rem;
+	}
+	.footer .footer-left, .footer .footer-right{
+		width: 3.5rem;
+	}
+	.footer-right > button#prevButton, .footer-left > button#nextButton{
+		font-size: 2rem;
+	}
+}
+	
