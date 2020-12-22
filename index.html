@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Nagan Construction</title>
+        <meta charset="UTF-8" />
+		<meta name="description" content="Nagan Construction Premier Civil Engineering Firm">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			<link rel="stylesheet" type="text/css" href="css/Main.css" />
+			<link rel="stylesheet" type="text/css" href="css/Index/Style.css" />
+			<link rel="stylesheet" type="text/css" href="css/Index/Webp.css" /> 
+			<link rel="stylesheet" type="text/css" href="css/Index/Slideshow.css" />
+			<link rel="icon" type="image/svg" href="images/NaganFavicon.svg"/>
+		<!--Check if Browser Supports Webp-->
+		<script>
+			async function supportsWebp() {
+				if (!self.createImageBitmap) return false;
+			  
+				const webpData = 'data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=';
+				const blob = await fetch(webpData).then(r => r.blob());
+				return createImageBitmap(blob).then(() => true, () => false);
+			}
+			
+			function changeCSS(cssFile, cssLinkIndex) {
+
+				var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
+				var newlink = document.createElement("link");
+				
+				newlink.setAttribute("rel", "stylesheet");
+				newlink.setAttribute("type", "text/css");
+				newlink.setAttribute("href", cssFile);
+
+				document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+			}
+			(async () => {
+				if(!await supportsWebp()) {
+					console.log("are we here?");
+					changeCSS("css/Index/No-Webp.css",3);
+				}
+			})();
+		</script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/debounce.js" defer></script>
+		<link rel="preload" as="font" href="../../images/Muli_Font/Muli-Light.woff" crossorigin="anonymous"/>
+		<link rel="preload" as="font" href="../images/Muli_Font/Muli-ExtraLight.woff" crossorigin="anonymous"/>
+		<link rel="preload" as="font" href="../../images/YellowTail_Font/yellowtail.ttf" crossorigin="anonymous"/>
+    </head>
+    <body>
+		<script> 
+			$(window).on('load', function(){
+				/*Hide NavBar on Scroll down*/
+				var timeout = false, delay = 750;
+				function prettyNav(){
+					var prevScrollpos = window.pageYOffset;
+					window.onscroll = function() {
+						if ($(window).width() > 980) {
+							var currentScrollPos = window.pageYOffset;
+							if (prevScrollpos > currentScrollPos) {
+								$("#nav").removeAttr("style");
+								$("#header").removeAttr("style");
+							} else {
+								document.getElementById("header").style.top = "-5.75rem";
+								document.getElementById("nav").style.top = "-5.75rem";
+							}
+								prevScrollpos = currentScrollPos;
+						}
+					}
+				}				
+				/* Debounce JS :'( */
+				$(window).resize(debounce(prettyNav, delay));
+				prettyNav();
+			});
+		</script>
+        <ul class="cb-slideshow">
+            <li><picture>Image 01</picture></li>
+            <li><picture class="lazy">Image 02</picture></li>
+            <li><picture class="lazy">Image 03</picture></li>
+            <li><picture class="lazy">Image 04</picture></li>
+            <li><picture class="lazy">Image 05</picture></li>
+            <li><picture class="lazy">Image 06</picture></li>
+        </ul>
+		<header id="header">
+			<svg fill="rgb(0, 0, 77)" font-family="BAUHS93" preserveAspectRatio="none">
+				<text y="60%" 
+					textLength="150"
+					style="font-size:3.25rem;">NAGAN
+				</text>
+				<text x="1%" y="80%"
+					textLength="150"
+					style="font-family:Arial; font-weight: 800;"
+					lengthAdjust="spacingAndGlyphs">CONSTRUCTION, Inc.
+				</text>
+				<image class="logo" src="images/Nagan-Construction.png" xlink:href="">
+			</svg>
+			<div id="containerB">
+				<label class="toggle" >
+					<input type="checkbox" id="toggle" onclick="toggleMenu()">
+					<div>
+						<div>
+							<span></span>
+							<span></span>
+						</div>
+						<svg>
+							<use xlink:href="#path">
+						</svg>
+						<svg>
+							<use xlink:href="#path">
+						</svg>
+					</div>
+				</label>
+			</div>
+			<nav id="nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="naganCon-Page2.php">Select Projects</a></li>
+					<li><a href="naganCon-Page3.html">Current Projects</a></li>
+					<li><a href="naganCon-Page4.html">Current Bids</a></li>
+					<li><a href="naganCon-Page5.html">Contact</a></li>
+					<li><a href="naganCon-Page6.php">Employment</a></li>
+				</ul>
+			</nav>
+		</header>	        
+		<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" id="path">
+				<path d="M22,22 L2,22 C2,11 11,2 22,2 C33,2 42,11 42,22"></path>
+			</symbol>
+		</svg>
+		</div>
+			<div class="containerA">
+				<div id="banner" >
+					<h2>Nagan Construction</h2>
+						<p>Building Our Future Since 1988</p>
+						<ul class="actions">
+							<li>
+								<a class="button">Learn More!</a>
+									<script>
+										$("a.button").click(function() {
+											$('html,body').animate({
+												scrollTop: $("footer").offset().top},
+												'slow');
+										});
+									</script>
+							</li>
+						</ul>
+				</div>
+			</div>
+		<footer>
+			<div id="company-info" class="company-info">
+				<div id="desc" class="desc">
+					<div id="desc-container" class="desc-container">
+						<p> Founded in 1988, Nagan Construction Inc. is a Multi-discipline, Small Business and General Contractor with a construction
+							bonding capability 40 million dollars per project and an aggregate bonding level of 60 million dollars. NCI is well versed in government contracts
+							and public-sector policies and procedures. Our experiences in this area offers clients a strategic competitive advantage over other contractors.
+							<br><br>
+							NCI has established an exceptional reputation of trust and integrity in the industry. NCI has built excellent partnerships with many local, state,
+							and government agencies including Department of Defense, Department of Labor, Department of Transportation,
+							National Park Service, Dormitory Authority of State of New York, Port Authority of NY & NJ, Federal Aviation Administration, Office of Mental Health,
+							Health & Hospice Organizations of NY, and multiple School Districts in Long Island, NY. NCI is also a prequalified General Contractor by SCA and
+							Brookhaven National Laboratory.
+							<br><br>
+							
+							NCI is a MATOC Contractor prequalified by NY, NJ and CT Air National Guards<br><br>
+							
+							NCI is comprised of Engineers, Architects and Project Managers with over 200 years combined experience in General Construction. The personnel at NCI
+							specialize in design and construction of municipal, federal, and commercial and public-sector endeavors including medical facilities
+							and schools.
+							<br><br>
+							NCI's primary
+							areas of operation include:
+							<br><br>
+							<b>General Construction Division</b> 
+							<br><br>
+							The staff of NCI consists of construction experts that work closely with architects and engineers to build a high quality, cost efficient facility on
+							schedule. NCI uses its own skilled laborers, foremen, and superintendents with conjunction of specialty subcontractors to provide complete economical
+							solutions. The General Construction services include:<br><br>
+
+								• General Construction<br>
+								• Design Build Capabilities<br>
+								• New Building Construction<br>
+								• Renovation<br>
+								• Remodeling<br>
+								• Restoration<br>
+								• Historic Restoration<br>
+								• Foundation to Roof<br>
+								• Interior/Exterior<br>
+								• Excavation, Concrete and Masonry<br>
+								• Rough and Finish Carpentry<br>
+								• Structural Steel<br>
+								• Electrical and Mechanical<br>
+								• HVAC<br><br>
+
+							<b>Construction Management</b><br><br>
+
+							Construction Management Services includes:<br><br>
+
+								• Bid Negotiations<br>
+								• Employ and Manage Contractors<br>
+								• Site Management/Safety Procedure<br>
+								• Quality Control and Validation<br>
+								• Progress Control<br>
+								• Cost Engineering<br>
+								• Project Budget<br>
+								• Developing a Cost Model and Estimate<br>
+								• Conceptual Estimate<br>
+								• Schematic Design Estimate<br>
+								• Construction Documents Estimate<br>
+								• Construction Cost Estimates<br>
+								• Quantity Surveying<br>
+								• Value Engineering<br>
+								• Cash Flow Projections<br><br>
+								
+							<b>Project Management</b><br><br>
+								
+							Project Management is the professional management
+							of multiple tasks ranging from the planning and design through closeout and occupancy. Project management services include:<br><br>
+
+								• Project definition<br>
+								• Developing a realistic and complete budget<br>
+								• Schedule of planning and design phase management<br>
+								• Management information system <br>
+								• Schedule and quality control<br>
+								• Review of documents for coordination & construct ability<br>
+								• Coordination of Client Requirements<br>
+								• Review Contract Procedures and Specifications<br>
+								• Budget Control<br>
+								• Monthly Control<br>
+								• Site-Specific Health & Safety Plan<br><br>
+
+							<b>Post Construction Services</b><br><br>
+
+								• Start-up Training<br>
+								• Operation and Maintenance Manuals<br>
+								• Performance Certification<br>
+								• Operations Assistance and Training <br>
+								• Debriefing with clients<br>
+								• Commissioning<br><br>
+								
+							To date, NCI has executed over 100 million in relevant
+							construction projects of varying size, scope and complexity and value, reflecting the types of activities - one being awarded by landmark society
+							of NY.<br><br>
+
+							NCI has the resources, personnel, financial stability, equipment and relevant experience to execute anticipated scopes of work under any proposed
+							project. NCI, headquartered in Baldwin, NY specialized in developing value-added solutions for multi-discipline construction projects that involve
+							the integration of standard architectural and engineering design of buildings; environmental, health, and safety engineering; and standard 
+							construction managers and project execution specialists. <br><br>
+							</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+    </body>
+	<script type="text/javascript" src="js/lazyLoad.js"></script>
+	<script type="text/javascript" src="js/hamburger.js"></script>
+</html>

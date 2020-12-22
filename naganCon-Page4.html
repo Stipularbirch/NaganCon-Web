@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Current Bids</title>
+        <meta charset="UTF-8" />
+		<meta name="description" content="Nagan Construction Premier Civil Engineering Firm">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="stylesheet" type="text/css" href="css/Main.min.css" />
+			<link rel="stylesheet" type="text/css" href="css/Page4/Style.css" />
+			<link rel="icon" type="image/svg" href="images/NaganFavicon.svg"/>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<link rel="preload" as="font" href="../images/Muli_Font/Muli-ExtraLight.woff" crossorigin="anonymous"/>
+    </head>
+	<body>
+		<header id="header">
+			<svg fill="rgb(0, 0, 77)" font-family="BAUHS93" preserveAspectRatio="none">
+				<text y="60%" 
+					textLength="150"
+					style="font-size:3.25rem;">NAGAN
+				</text>
+				<text x="1%" y="80%"
+					textLength="150"
+					style="font-family:Arial; font-weight: 800;"
+					lengthAdjust="spacingAndGlyphs">CONSTRUCTION, Inc.
+				</text>
+				<image class="logo" src="images/Nagan-Construction.png" xlink:href="">
+			</svg>
+			<div id="containerB">
+				<label class="toggle" >
+					<input type="checkbox" id="toggle" onclick="toggleMenu()">
+					<div>
+						<div>
+							<span></span>
+							<span></span>
+						</div>
+						<svg>
+							<use xlink:href="#path">
+						</svg>
+						<svg>
+							<use xlink:href="#path">
+						</svg>
+					</div>
+				</label>
+			</div>
+			<nav id="nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="naganCon-Page2.php">Select Projects</a></li>
+					<li><a href="naganCon-Page3.html">Current Projects</a></li>
+					<li><a href="naganCon-Page4.html">Current Bids</a></li>
+					<li><a href="naganCon-Page5.html">Contact</a></li>
+					<li><a href="naganCon-Page6.php">Employment</a></li>
+				</ul>
+			</nav>
+		</header>	        
+		<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" id="path">
+				<path d="M22,22 L2,22 C2,11 11,2 22,2 C33,2 42,11 42,22"></path>
+			</symbol>
+		</svg>
+		<ul id="bids" class="current_bids_container"></ul>
+		<script>
+		$(document).ready(function(){
+				$.ajax({
+					type: "GET",
+					url: "https://nagancon.ipower.com/page4.html",
+					context: document.body,
+					success: function(response){
+						response = response.replace(/<img/gi, '<noload');
+						$(response).find("#reference td p span strong").each(function (i, span){
+							var ref = "'http://nagancon.ipower.com"+$(this).find('a').attr('href')+"'"
+							var data = span.innerHTML;
+							data = data.replace(/<\/?a\s?(?:href="\/[A-z,\s+]+(?:\/[A-z0-9,\s+,\-,.,:,;,?,!]+)*")?>/g,"");
+							$("#bids").append("<li><a class='bidding_project' href="+ ref +">" +
+							"<p id="+ i +" class='bidding_title'>"+ data +"</p>" + "</a></li>");
+						});
+					}
+				});
+			});
+		</script>
+	</body>
+	<script type="text/javascript" src="js/hamburger.js"></script>
+</html>

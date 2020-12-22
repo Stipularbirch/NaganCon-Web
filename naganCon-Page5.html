@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+ <head>
+		<title>Current Bids</title>
+        <meta charset="UTF-8" />
+		<meta name="description" content="Nagan Construction Premier Civil Engineering Firm">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+			<link rel="stylesheet" type="text/css" href="css/Main.min.css" />
+			<link rel="stylesheet" type="text/css" href="css/Page5/Style.css" />
+			<link rel="icon" type="image/svg" href="images/NaganFavicon.svg"/>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/debounce.js" defer></script>
+		<link rel="preload" as="font" href="../images/Muli_Font/Muli-ExtraLight.woff" crossorigin="anonymous"/>
+    </head>
+    <body>
+		<footer id="footer" class="content">
+			<header id="header">
+			<svg fill="rgb(0, 0, 77)" font-family="BAUHS93" preserveAspectRatio="none">
+				<text y="60%" 
+					textLength="150"
+					style="font-size:3.25rem;">NAGAN
+				</text>
+				<text x="1%" y="80%"
+					textLength="150"
+					style="font-family:Arial; font-weight: 800;"
+					lengthAdjust="spacingAndGlyphs">CONSTRUCTION, Inc.
+				</text>
+				<image class="logo" src="images/Nagan-Construction.png" xlink:href="">
+			</svg>
+			<div id="containerB">
+				<label class="toggle" >
+					<input type="checkbox" id="toggle" onclick="toggleMenu()">
+					<div>
+						<div>
+							<span></span>
+							<span></span>
+						</div>
+						<svg>
+							<use xlink:href="#path">
+						</svg>
+						<svg>
+							<use xlink:href="#path">
+						</svg>
+					</div>
+				</label>
+			</div>
+			<nav id="nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="naganCon-Page2.php">Select Projects</a></li>
+					<li><a href="naganCon-Page3.html">Current Projects</a></li>
+					<li><a href="naganCon-Page4.html">Current Bids</a></li>
+					<li><a href="naganCon-Page5.html">Contact</a></li>
+					<li><a href="naganCon-Page6.php">Employment</a></li>
+				</ul>
+			</nav>
+		</header>	        
+		<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+			<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" id="path">
+				<path d="M22,22 L2,22 C2,11 11,2 22,2 C33,2 42,11 42,22"></path>
+			</symbol>
+		</svg>
+			<div id="wrapper" class="lineup">
+				<div id="map" class="col" data-lat="40.656073" data-lng="-73.609964"></div>
+				<script src="js/jquery.lazyLoadGoogleMaps.js"></script>
+				<script async defer>
+				;(function( $, window, document, undefined ){
+						var $window			= $( window ),
+							mapInstances	= [],
+							$pluginInstance	= $( '#map' ).lazyLoadGoogleMaps({
+									callback: function( container, map ){
+
+										var $container	= $( container ),
+											center		= new google.maps.LatLng( $container.attr( 'data-lat' ), $container.attr( 'data-lng' ) );
+
+										map.setOptions({	zoom: 10,
+															center: center,
+															mapTypeControl: true,
+															mapTypeControlOptions: {
+																style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+																position: google.maps.ControlPosition.LEFT_BOTTOM
+															},
+															fullscreenControl: true,
+															fullscreenControlOptions:{
+																position: google.maps.ControlPosition.LEFT_CENTER
+														 },
+														 scrollwheel: false });
+											
+										new google.maps.Marker({ position: center, map: map });
+
+										$.data( map, 'center', center );
+										mapInstances.push( map );
+
+										var updateCenter = function(){ $.data( map, 'center', map.getCenter() ); };
+										google.maps.event.addListener( map, 'dragend', updateCenter );
+										google.maps.event.addListener( map, 'zoom_changed', updateCenter );
+										google.maps.event.addListenerOnce( map, 'idle', function(){ $container.addClass( 'is-loaded' ); });
+								
+									}
+								});
+						$window.on( 'resize', $pluginInstance.debounce( 1000, function(){
+							$.each( mapInstances, function(){
+								this.setCenter( $.data( this, 'center' ) );
+							});
+						}));
+					})( jQuery, window, document );
+				</script>
+				<div id="contact" class="col">
+					<section id="contact_align">
+							<header id="inside_header"> 	
+								<h2>Contact Information</h2> 	
+								<p>For your convenience you can reach us in a number ways.</p> 	
+							</header> 
+					</section>
+					<section class="containerC">
+						<div class="firstInfo">
+							<div class="infoWrapper">
+								<i class="icon rounded ">
+									<img class="iconImage" src="../images/select_projects/Icons/clock.svg" alt="Clock Icon">
+								</i>
+								<p class="resizeable">Our business is located at 710 Sunrise Highway Baldwin, NY 11510. Operating hours 8 A.M. - 5 P.M. Mon - Fri</p>
+							</div>
+						</div>
+						<div class="secondInfo">
+							<div class="infoWrapper">
+								<i class="icon rounded">
+									<img class="iconImage" src="../images/select_projects/Icons/comments.svg" alt="Conversation Icon">
+								</i>
+								<p class="resizeable">Our email is nagan@naganconstruction.com. Please state your subject matter appropriately in the email subject field</p>
+							</div>
+						</div>
+						<div class="thirdInfo">
+							<div class="infoWrapper">
+								<i class="icon rounded">
+									<img class="iconImage" src="../images/select_projects/Icons/user.svg" alt="Person Icon">
+								</i>
+								<p class="resizeable">Also feel free to contact us by phone at 516-374-6286 or fax 516-374-6290</p>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</footer>
+    </body>
+	<script>
+		$(document).ready(function(){
+			function calcHeightToWidthRatio(){
+				 var height = $(window).height(), width = $(window).width(),
+					  ratio = height/width;
+				 
+				 if ( ratio >= 1 ) {
+					if ( $("p.resizeable").hasClass("fontHeight") ) {
+						$("p.resizeable").removeClass("fontHeight");
+					} else if  ( $("img.iconImage").hasClass("imageHeight") ) {
+						$("img.iconImage").removeClass("imageHeight");
+					}
+					$("p.resizeable").addClass("fontWidth");
+					$("img.iconImage").addClass("imageWidth");
+				 } else {
+					if ( $("p.resizeable").hasClass("fontWidth") ) {
+						$("p.resizeable").removeClass("fontWidth");
+					} else if  ( $("img.iconImage").hasClass("imageWidth") ) {
+						$("img.iconImage").removeClass("imageWidth");
+					}
+					$("p.resizeable").addClass("fontHeight");
+					$("img.iconImage").addClass("imageHeight");
+				 }
+				console.log(ratio);
+			}
+			
+			$(window).resize(debounce(calcHeightToWidthRatio, 250));
+			calcHeightToWidthRatio();;
+		});
+		
+	</script>
+	<script type="text/javascript" src="js/hamburger.js"></script>
+</html>
